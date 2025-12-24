@@ -1,0 +1,6 @@
+# Proceso Creativo de RPG en PyQt5
+
+## Logs
+- 23/12/2025: Inicialmente tengo la idea de hacer el RPG en python ocupando PyQt5, se que probablemente no es lo mejor ni es lo mas rapido, pero creo que puedo aprender más cosas valiosas haciendolo de esta manera. Ejemplo de esto es movimiento y colocacion manual de pixeles en pantalla. Estoy intentando aprender lo más posible haciendo este projecto por lo que tampoco estoy ocupando mucho herramientas IA. La idea es afirmar y profundizar mis conocimientos de progra avanzada. Respecto a el juego mismo todavia no decido nada, simplemente estoy probando conceptos fundamentales para ver que funciona, de esta manera comienzo intentado entender como puedo mover a un personaje en pantalla y generar coalisiones de objetos. tengo pensado hacer una ventana simple de prueba y un personaje con un sprite donde pueda colocar ciertos obstaculos y generar coalisiones.
+
+-24/12/2025 1:27 am: me di cuenta que tenia mal la aproximacion, empece a ocupar entonces los metodos especializados de pyqt5 que se usan para configurar un espacio 2d. logre hacer un espacio negro y un sprite que se mueve con wasd. Lo proximo seria revisar coalisiones y mejorar la interaccion del sprite.

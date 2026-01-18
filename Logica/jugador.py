@@ -10,3 +10,5 @@ class Jugador:
     def moverse(self, movimiento_x, movimiento_y):
         self.pos_x += movimiento_x
         self.pos_y += movimiento_y
+
+

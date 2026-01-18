@@ -2,7 +2,9 @@ from PyQt5.QtWidgets import QGraphicsView, QGraphicsPixmapItem, QGraphicsScene
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtCore import Qt, QTimer
 from Logica.jugador import Jugador
-from parametros import DIRECCION_SPRITE, ANCHO_VENTANA, ALTO_VENTANA, ANCHO_JUGADOR, ALTO_JUGADOR
+from Logica.enemigo import Enemigo
+from parametros import DIRECCION_SPRITE, DIRECCION_SPRITE_ESQUELETO, ANCHO_VENTANA, ALTO_VENTANA, ANCHO_JUGADOR, ALTO_JUGADOR, ANCHO_ESQUELETO, ALTO_ESQUELETO
+
 
 class ImagenJugador(QGraphicsPixmapItem):
     def __init__(self, pixmap: QPixmap):
@@ -10,6 +12,14 @@ class ImagenJugador(QGraphicsPixmapItem):
 
     def sinc_movimiento(self, jugador: Jugador):
         self.setPos(jugador.pos_x, jugador.pos_y)
+
+
+class ImagenEsqueleto(QGraphicsPixmapItem):
+    def __init__(self, pixmap: QPixmap):
+        super().__init__(pixmap)
+
+    def sinc_movimiento(self, enemigo: Enemigo):
+        self.setPos(enemigo.pos_x, enemigo.pos_y)
 
 
 
@@ -35,6 +45,18 @@ class VentanaJuego(QGraphicsView):
         print(pixmap.isNull())
         self.escena.addItem(self.imagen_jugador)
         self.imagen_jugador.sinc_movimiento(self.jugador)
+
+        # Enemigo
+        self.enemigo = Enemigo()
+        pixmap_enemigo = QPixmap(DIRECCION_SPRITE_ESQUELETO)
+        pixmap_enemigo = pixmap_enemigo.scaled(
+            ANCHO_ESQUELETO, ALTO_ESQUELETO,
+            Qt.KeepAspectRatio,
+            Qt.FastTransformation
+        )
+        self.imagen_esqueleto = ImagenEsqueleto(pixmap_enemigo)
+        self.escena.addItem(self.imagen_esqueleto)
+        self.imagen_esqueleto.sinc_movimiento(self.enemigo)
 
         # loop juego
         self.acciones = set()
@@ -68,6 +90,8 @@ class VentanaJuego(QGraphicsView):
 
         self.jugador.moverse(recorrido_x, recorrido_y)
         self.imagen_jugador.sinc_movimiento(self.jugador)
+
+
 
 
 

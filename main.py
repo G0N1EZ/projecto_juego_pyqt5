@@ -1,14 +1,27 @@
 import sys
-from Renderizado.ventana_juego import VentanaJuego
 from PyQt5.QtWidgets import QApplication
+from frontend.VentanaJuego import VentanaPrincipal
+
 
 
 if __name__ == "__main__":
     def hook(type_, value, traceback):
-        print(type_)
-        print(traceback)
+        """Hook para capturar excepciones no manejadas"""
+        print(f"Error tipo: {type_}")
+        print(f"Valor: {value}")
+        print(f"Traceback: {traceback}")
+
     sys.__excepthook__ = hook
-    app = QApplication([])
-    ventana_juego = VentanaJuego()
-    ventana_juego.show()
-    sys.exit(app.exec())
+
+    # Crear instancia del backend (lógica del juego)
+
+
+    # Crear aplicación Qt
+    app = QApplication(sys.argv)
+
+    # Crear ventana y pasar la referencia al juego
+    ventana = VentanaPrincipal()
+    ventana.show()
+
+    # Iniciar loop de la aplicación
+    sys.exit(app.exec_())

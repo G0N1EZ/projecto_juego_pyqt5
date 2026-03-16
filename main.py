@@ -1,6 +1,6 @@
 import sys
 from PyQt5.QtWidgets import QApplication
-from frontend.VentanaJuego import VentanaPrincipal
+from frontend.VentanaJuego import VentanaJuego
 
 
 
@@ -20,7 +20,7 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
 
     # Crear ventana y pasar la referencia al juego
-    ventana = VentanaPrincipal()
+    ventana = VentanaJuego()
     ventana.show()
 
     # Iniciar loop de la aplicación

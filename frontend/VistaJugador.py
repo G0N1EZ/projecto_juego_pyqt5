@@ -5,10 +5,11 @@ from frontend.parametros import NIVEL_ZOOM, FACTOR_ZOOM
 
 class VistaJugador(QGraphicsView):
     def __init__(self, escena):
-        super().__init__()
+        super().__init__(escena)
         self.escena = escena
         self.zoom_camara = NIVEL_ZOOM
         self.setRenderHint(QPainter.Antialiasing)
+        self.setBackgroundBrush(Qt.darkGray)
 
         # configuraciones de camara
         self.setDragMode(QGraphicsView.ScrollHandDrag)

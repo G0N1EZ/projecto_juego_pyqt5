@@ -6,8 +6,8 @@ DIMENSION_Y = 600
 
 
 # parametros mapa visual
-TILE_X = 105
-TILE_Y = 54
+TILE_X = 64  # El ancho exacto al que escalas en GestorSprites
+TILE_Y = 32  # La mitad perfecta para isometría
 
 
 
@@ -17,11 +17,15 @@ FACTOR_ZOOM = 1.15
 
 # parametros de cortado de imagen
 RUTA_IMAGEN = os.path.join("frontend", "sprites", "sprites_basicos.png")
-CORTADO_Y = 71 #PIXELES
-CORTADO_X = 105 #pixeles
-MARGEN_ENTRE_IMAGEN = 13 #PIXELES
-MARGEN_INICIO_X = 0 #PIXELES
-MARGEN_INICIO_Y = 11 #´PIXELES
-SPRITES_POR_FILA = 12
+
+COORDENADA_IMAGEN_PASTO_X = 6
+COORDENADA_IMAGEN_PASTO_Y = 11
+ANCHO_TYLE_PASTO = 105
+ALTO_TYLE_PASTO = 71
+
+COORDENADA_IMAGEN_AGUA_X = 1061
+COORDENADA_IMAGEN_AGUA_Y = 11
+ANCHO_TYLE_AGUA = 105
+ALTO_TYLE_AGUA = 71
 
 

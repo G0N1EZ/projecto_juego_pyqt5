@@ -43,5 +43,5 @@ class GestorActivos:
         )
 
             # 3. Guardamos la versión encogida
-        self.terrenos[tipo_terreno] = pixmap_escalado
+        self.terrenos[tipo_terreno] = pixmap_original
 

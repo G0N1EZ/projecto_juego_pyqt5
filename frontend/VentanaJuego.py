@@ -10,15 +10,10 @@ class VentanaJuego(QMainWindow):
         super().__init__()
         self.setWindowTitle("Mi Juego")
         self.resize(DIMENSION_X, DIMENSION_Y)
-        self.mapa = [
-            [0, 0, 1, 1, 1],
-            [0, 1, 1, 1, 1],
-            [1, 1, 0, 0, 1],
-            [1, 1, 1, 1, 0],
-            [1, 0, 0, 0, 0]
-        ]
+        self.mapa = MapaProcedimental()
+        self.chunk = self.mapa.chunk
 
-        self.escena = MapaVisual(self.mapa)
+        self.escena = MapaVisual(self.chunk)
         self.vista = VistaJugador(self.escena)
 
         self.setCentralWidget(self.vista)

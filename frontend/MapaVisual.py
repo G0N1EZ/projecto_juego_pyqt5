@@ -17,13 +17,12 @@ class MapaVisual(QGraphicsScene):
         for cor_y, fila_x in enumerate(self.chunk):
             for cor_x, tipo_terreno in enumerate(fila_x):
                 iso_x = ((cor_x-cor_y)*(self.tile_x/2))
-                iso_y = ((cor_x+cor_y)*(self.tile_y/2))
+                iso_y = ((cor_x+cor_y)*((self.tile_y - 9)/2))
 
                 if tipo_terreno == 0:
                     pixmap = self.objetos_graficos.obtener_terreno(0)
                 elif tipo_terreno == 1:
                     pixmap = self.objetos_graficos.obtener_terreno(1)
-
                 if pixmap:
                     item = QGraphicsPixmapItem(pixmap)
                     item.setOffset(-self.tile_x / 2, 0)

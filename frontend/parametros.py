@@ -6,8 +6,8 @@ DIMENSION_Y = 600
 
 
 # parametros mapa visual
-TILE_X = 64  # El ancho exacto al que escalas en GestorSprites
-TILE_Y = 32  # La mitad perfecta para isometría
+TILE_X = 105  # El ancho exacto al que escalas en GestorSprites
+TILE_Y = 71  # La mitad perfecta para isometría
 
 
 

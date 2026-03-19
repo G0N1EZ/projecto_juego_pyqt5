@@ -8,12 +8,14 @@ DIMENSION_Y = 600
 # parametros mapa visual
 TILE_X = 105  # El ancho exacto al que escalas en GestorSprites
 TILE_Y = 71  # La mitad perfecta para isometría
+TAMANO_CHUNK = 8
 
 
 
 # parametros camara
 NIVEL_ZOOM = 1.0
 FACTOR_ZOOM = 1.15
+VELOCIDAD_CAMARA = 30 # fRAMES
 
 # parametros de cortado de imagen
 RUTA_IMAGEN = os.path.join("frontend", "sprites", "sprites_basicos.png")

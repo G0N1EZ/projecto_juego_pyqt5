@@ -15,7 +15,7 @@ TAMANO_CHUNK = 8
 # parametros camara
 NIVEL_ZOOM = 1.0
 FACTOR_ZOOM = 1.15
-VELOCIDAD_CAMARA = 30 # fRAMES
+VELOCIDAD_CAMARA = 8 # fRAMES
 
 # parametros de cortado de imagen
 RUTA_IMAGEN = os.path.join("frontend", "sprites", "sprites_basicos.png")

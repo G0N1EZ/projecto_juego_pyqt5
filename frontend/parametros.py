@@ -30,4 +30,6 @@ COORDENADA_IMAGEN_AGUA_Y = 11
 ANCHO_TYLE_AGUA = 105
 ALTO_TYLE_AGUA = 71
 
+# JUGADOR
+PATH_SPRITE_JUGADOR = os.path.join("frontend", "sprites", "jugador.png")
 

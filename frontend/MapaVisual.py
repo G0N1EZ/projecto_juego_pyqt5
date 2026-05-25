@@ -2,6 +2,7 @@ from PyQt5.QtWidgets import QGraphicsScene, QGraphicsPixmapItem
 from backend.mapa import MapaProcedimental
 from frontend.GestorSprites import GestorActivos
 from frontend.parametros import TILE_X, TILE_Y, TAMANO_CHUNK
+from frontend.jugador import Jugador
 
 class MapaVisual(QGraphicsScene):
     def __init__(self):
@@ -11,6 +12,10 @@ class MapaVisual(QGraphicsScene):
         self.tamano_chunk = TAMANO_CHUNK
         self.objetos_graficos = GestorActivos()
         self.chunks_dibujados = {}
+
+        #insertamos jugador
+        self.jugador = Jugador()
+        self.addItem(self.jugador)
 
     def generar_chunk(self, coordenada_x, coordenada_y, chunk):
         items_de_este_chunk = [] # Guardaremos los 25 rombos aquí

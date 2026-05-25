@@ -31,5 +31,7 @@ ANCHO_TYLE_AGUA = 105
 ALTO_TYLE_AGUA = 71
 
 # JUGADOR
-PATH_SPRITE_JUGADOR = os.path.join("frontend", "sprites", "jugador.png")
+# Añadir al final de parametros.py
+RUTA_SPRITE_JUGADOR = os.path.join("frontend", "sprites", "Pawn_Run.png")
+VELOCIDAD_JUGADOR = 0.05 # Velocidad de movimiento lógico por frame
 

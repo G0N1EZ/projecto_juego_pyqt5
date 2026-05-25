@@ -35,12 +35,12 @@ class GestorActivos:
         nuevo_alto = int(alto_cortado * (64 / ancho_cortado))
 
             # Aplicamos el suavizado (SmoothTransformation) para que no se vea pixelado
-        pixmap_escalado = pixmap_original.scaled(
+        '''pixmap_escalado = pixmap_original.scaled(
             nuevo_ancho,
             nuevo_alto,
             Qt.IgnoreAspectRatio,
             Qt.SmoothTransformation
-        )
+        )'''
 
             # 3. Guardamos la versión encogida
         self.terrenos[tipo_terreno] = pixmap_original

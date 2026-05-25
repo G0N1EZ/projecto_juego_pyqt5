@@ -19,6 +19,8 @@ class VistaJugador(QGraphicsView):
         self.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
         self.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
 
+        self.teclas_presionadas = set()
+
     def wheelEvent(self, event: QWheelEvent | None) -> None:
         if event.angleDelta().y() > 0:
             self.scale(FACTOR_ZOOM, FACTOR_ZOOM)
@@ -26,29 +28,11 @@ class VistaJugador(QGraphicsView):
             self.scale(1/FACTOR_ZOOM, 1/FACTOR_ZOOM)
 
     def keyPressEvent(self, event: QKeyEvent | None) -> None:
-        velocidad_camara = VELOCIDAD_CAMARA
-        if event.key() == Qt.Key_W:
-            barra_v = self.verticalScrollBar()
-            barra_v.setValue(barra_v.value() - velocidad_camara)
+        self.teclas_presionadas.add(event.key())
 
-        elif event.key() == Qt.Key_S:
-            barra_vs = self.verticalScrollBar()
-            barra_vs.setValue(barra_vs.value() + velocidad_camara)
-
-        elif event.key() == Qt.Key_A:
-            barra_ha = self.horizontalScrollBar()
-            barra_ha.setValue(barra_ha.value() - velocidad_camara)
-
-        elif event.key() == Qt.Key_D:
-            barra_hd = self.horizontalScrollBar()
-            barra_hd.setValue(barra_hd.value() + velocidad_camara)
-
-        else:
-            return super().keyPressEvent(event)
-
-        centro_pantalla = self.viewport().rect().center()
-        punto_escena = self.mapToScene(centro_pantalla)
-        self.senal_mover_camara.emit(punto_escena.x(), punto_escena.y())
+    def keyReleaseEvent(self, event: QKeyEvent | None) -> None:
+        if event.key() in self.teclas_presionadas:
+            self.teclas_presionadas.remove(event.key())
 
 
 
